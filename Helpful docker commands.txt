@@ -1,0 +1,34 @@
+docker-compose build --no-cache
+
+docker-compose up --force-recreate
+
+
+docker exec -ti apibooklet_db_1 bash
+
+docker exec -ti partnerbooklet_php_1 bash
+docker exec -ti partnerbooklet_db_1 bash
+
+
+TRAEFIK:
+
+docker-compose up -d reverse-proxy
+
+docker network create traefik_proxy
+
+
+
+STOP THE CONTAINER(S) USING THE FOLLOWING COMMAND:
+
+docker-compose down
+
+DELETE ALL CONTAINERS USING THE FOLLOWING COMMAND:
+
+docker rm -f $(docker ps -a -q)
+
+DELETE ALL VOLUMES USING THE FOLLOWING COMMAND:
+
+docker volume rm $(docker volume ls -q)
+
+RESTART THE CONTAINERS USING THE FOLLOWING COMMAND:
+
+docker-compose up -d
