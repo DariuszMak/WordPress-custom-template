@@ -3,10 +3,10 @@ docker-compose build --no-cache
 docker-compose up --force-recreate
 
 
-docker exec -ti apibooklet_db_1 bash
+docker exec -ti [container_name] bash
 
-docker exec -ti partnerbooklet_php_1 bash
-docker exec -ti partnerbooklet_db_1 bash
+docker exec -ti [container_name] bash
+docker exec -ti [container_name] bash
 
 
 TRAEFIK:
@@ -31,4 +31,4 @@ docker volume rm $(docker volume ls -q)
 
 RESTART THE CONTAINERS USING THE FOLLOWING COMMAND:
 
-docker-compose up -d
+docker-compose up --force-recreate
