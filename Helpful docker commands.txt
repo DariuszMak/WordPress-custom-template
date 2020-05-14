@@ -32,3 +32,10 @@ docker volume rm $(docker volume ls -q)
 RESTART THE CONTAINERS USING THE FOLLOWING COMMAND:
 
 docker-compose up --force-recreate
+
+
+
+LOGIN TO PHPMYADMIN:
+
+root
+p4ssw0rd!
